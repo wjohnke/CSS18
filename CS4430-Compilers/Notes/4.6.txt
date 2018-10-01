@@ -1,0 +1,16 @@
+Garbage collection – 
+Moving data can be accomplished if all pointers to data are moved with it
+Two Space :Have two heaps & move all live data from from one heap to another every garbage collection cycle
+	Advantages – easier to compact, sort/free up memory
+	Disadvantages – uses much more memory, can act horribly with data caches? Not commonly used
+
+Use either compacting or 2-space,both have advantages, some more applicable in certain areas
+
+Generational collectors
+	dichotomy between very short lived objects/data and very long lived objects. Not much in between.
+	So create an "Eden" where objects are created and die very young most likely,
+		perform minor collections, each collection the longest lived objects in Eden move to "old generation" (only collecting on Eden)
+		- very fast, useable for things like animations, things that have a very definite minimal time.
+		- eventually the older generation fills up, and then perform a garbage collection on the entire heap, start again.
+	- The kind of collection Java uses.
+Garbage collectors are already hard to write, with Generational GC being even harder because it steps into concurrency programming

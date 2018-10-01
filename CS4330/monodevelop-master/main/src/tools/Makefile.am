@@ -1,0 +1,1 @@
+SUBDIRS = mdhost mdtool mdmonitor

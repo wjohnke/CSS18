@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class>
+   <student id="100">
+   	  <pawprint>smithsa34</pawprint>
+      <firstname>Sally</firstname>
+      <lastname>Smith</lastname>
+      <grade>85</grade>
+   </student>
+   <student>
+   	  <pawprint>minnichbr12</pawprint>
+      <firstname>Brian</firstname>
+      <lastname>Minnich</lastname>
+   </student>
+   <student id="274">
+      <pawprint>martinja19</pawprint>
+      <firstname>Jack</firstname>
+      <lastname>Martin</lastname>
+      <grade>91.8</grade>
+   </student>
+   <student id="147">
+      <pawprint>xuke23</pawprint>
+      <firstname>Kevin</firstname>
+      <lastname>Xu</lastname>
+      <grade>90</grade>
+   </student>
+</class>

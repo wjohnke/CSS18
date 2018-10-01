@@ -1,0 +1,43 @@
+4/27/18 - Compilers I Notes
+----------------------------
+
+Very few interchangeable registers in x86 assembly
+x86 - CISC 
+3 address - RISC - Reduced instruction set
+	How to transfer intermediate language to x86 efficiently
+	  |
+          |
+	  V
+Instruction selection:
+	Tiling - (tile- pattern, pattern on a tree or a DAG)
+	
+	Straightforward selection -> translate every instruction into a set of assembly instructions, but its inefficient
+	So you could use another intermediate language with a few more instructions
+
+
+Issue -> how to detect non-adjacent instructions that could be mapped to more complex machine instructions like movex
+	Could generate a different representation of intermediate language
+	Put machine instructions like (movem rb, ra) into a "tile", or a tree, which contains something looking like:
+
+							movem rb, ra
+								|
+							       / \
+					    []	_______________   __________ []
+				             +                                +
+				       addr a  \                         addr b \
+ 						*                                *
+					      i    4                           j   4
+	Tiling - find set of disjoint tiles that covers the tree
+		Simply a kind of pattern matching 
+		Designed by compiler writer
+		Multiple possible tilings - can correspond to a sequence of machine instructions
+	Directed Acyclic graph may be a more efficient way to represent a tiling, like atree representation, but certain instructions
+		share operations and variables/sub-expressions represented by the same node
+	So compiler needs to generate low level intermediate representation into DAG representation
+		Then find a good tiling of the DAG, can use dynamic programming?
+		
+
+
+
+
+ 

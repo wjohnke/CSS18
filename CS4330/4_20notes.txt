@@ -1,0 +1,47 @@
+C# notes -4/20/18
+
+delegate - c# term for object that can contain variable references to functions, has to have a return type and a parameter value list
+	implementation: NumberTest isEven  = number =>  number%2 ==0;
+			  
+			^delegate^            ^parameters       => is the separator between parameter list & actual code
+						received
+
+	Can use this notion to write multiple function tests, for example, use delegate type to hold a test for number types,
+	split up actual tests among different delgate declarations, like  above implementation
+	- This has the advantage to treat functions as functions, which Java doesn't have, so Java implemented the lambda as a
+	  response to this
+	  	could use for a sort function, and pass in a test function to the sort function so it would know how to sort two elements
+		Idea: could use for chain of responsibility checks?
+
+
+Threading
+----------
+Create new threads just as you would create a new object, pass in a function as a parameter
+	-then just call .Start() on the object, then the thread will be initiated and the function (work1) will start working immediately
+	in parallel
+	-Threads finish same as Java, when they return, they are done.
+	-Thread.Sleep(x)   - use to sleep current thread, calling on class, within function
+
+Problems with languages - they choose a paradigm and then have no choice but to stick to it. Controls how  you think about solving the
+problem. Having multiple paradigms and being able to balance them enables different styles of thinking about problem solving.
+
+
+
+DLL - dynamic linked library, equivalent of .jar
+	any program that knows of a dll can use this library that sits on your computer, multiple programs can use single copy, eliminates
+	need for multiple copies.
+	Entire windows os pretty much composed of nothing but dll's. Dynamic because it does not match up functions at compile-time, it does
+	at runtime.
+	- works for any language,interoperable, because it's based on bytecode.
+	- can have instance or static methods	
+
+- Can access DLLs within references folder of a cs project
+- passing DLLs around does not give source code out, just access to functions, similar to an interface.
+
+
+
+Takeaway - relating objects in XML interface to actual objects/variables held in code. Every platform has one: JavaFXML, windows w/ cs and window builder,
+	swift has drag and drop linking variables to actual ui.
+
+
+
